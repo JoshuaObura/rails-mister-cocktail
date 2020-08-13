@@ -1,0 +1,16 @@
+<h1>Cocktail</h1>
+<%# we want details %>
+<br>
+<p><%= @cocktail.name %></p>
+<% @cocktail.doses.each do |dose|%>
+<p><%= dose.description %> / <%= dose.ingredient.name %> </p>
+<% end %>
+
+<p><%= link_to 'Back', cocktails_path%><p>
+<p><%= link_to 'Update cocktail', edit_cocktail_path(@cocktail) %></p>
+
+<%= simple_form_for [@cocktail, @dose] do |f|%>
+  <%= f.input :description %>
+  <%= f.association :ingredient %>
+  <%= f.submit %>
+  <% end %>

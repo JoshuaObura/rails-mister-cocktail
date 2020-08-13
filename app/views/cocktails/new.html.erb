@@ -1,0 +1,9 @@
+<h1> Make a Cocktail </h1>
+<%= simple_form_for(@cocktail) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.submit %>
+  <% end %>
+
+  <p><%= link_to 'Lets add some ingredients', cocktails_path%></p>
